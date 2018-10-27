@@ -5,7 +5,9 @@ var playerScore = 0;
 var wins = 0;
 var losses = 0;
 
-var randomNumber = Math.floor((Math.random() * 120) + 19);
+// had a rough time coming to a simple fix. I had the multiplier set to 120....and wondered why i couldnt keep number capped at 120 (after adding 19) 
+// var randomNumber = Math.floor((Math.random() * 120) + 19);
+var randomNumber = Math.floor((Math.random() * 102) + 19);
   console.log(randomNumber);
 
 // var crystalValue = [
@@ -42,7 +44,7 @@ function reset() {
   purpleCrystal = Math.floor((Math.random() * 12) + 1);
     console.log(pinkCrystal);
 }
-
+//NIFTY FUNCTION THAT I CALL WITHIN THE MAIN PROCESSES BELOW
 function verify() {
   if (playerScore === randomNumber) {
     wins++;
@@ -66,7 +68,7 @@ $('#random-number').text(randomNumber);
 
 
 
-// MAIN PROCESS
+// MAIN PROCESS FUNCTIONS FOR CRYSTAL CLICKS
 $(".blue-crystal").on("click", function() {
   playerScore += blueCrystal;
   verify();
