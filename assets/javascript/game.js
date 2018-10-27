@@ -7,9 +7,11 @@ var losses = 0;
 
 // had a rough time coming to a simple fix. I had the multiplier set to 120....and wondered why i couldnt keep number capped at 120 (after adding 19) 
 // var randomNumber = Math.floor((Math.random() * 120) + 19);
+// fixed upper cap to be 120
 var randomNumber = Math.floor((Math.random() * 102) + 19);
   console.log(randomNumber);
 
+// I COULD NOT GET THIS TO WORK FOR ME...
 // var crystalValue = [
 //   { blueCrystal: Math.floor((Math.random() * 12) + 1) },
 //   { redCrystal: Math.floor((Math.random() * 12) + 1) },
@@ -32,7 +34,7 @@ var pinkCrystal = Math.floor((Math.random() * 12) + 1);
 function reset() {
   playerScore = 0;
   $("#player-score").text(playerScore);
-  randomNumber = Math.floor((Math.random() * 120) + 19);
+  randomNumber = Math.floor((Math.random() * 102) + 19);
     console.log(randomNumber);
     $('#random-number').text(randomNumber);
   blueCrystal = Math.floor((Math.random() * 12) + 1);
@@ -68,7 +70,7 @@ $('#random-number').text(randomNumber);
 
 
 
-// MAIN PROCESS FUNCTIONS FOR CRYSTAL CLICKS
+// MAIN PROCESSES
 $(".blue-crystal").on("click", function() {
   playerScore += blueCrystal;
   verify();
